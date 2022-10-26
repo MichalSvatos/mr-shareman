@@ -63,6 +63,7 @@ body {
 	padding: calc(var(--gap) * 3) var(--gap);
 	margin: 0;
 	text-align: center;
+	line-height: 1.3;
 	background-image: radial-gradient(circle, #0d2613, #0d2513, #0c2313, #0c2212, #0c2112, #0c1f11, #0c1d10, #0b1b0f, #09180d, #08150b, #061109, #050d07);
 	font-family: var(--font-primary);
 	color: rgb(var(--color-primary));
