@@ -343,6 +343,10 @@ body::after {
 	pointer-events: none;
 }
 
+.modal__button::after {
+	display: none;
+}
+
 /* -- button variants */
 .modal__button-icon {
 	display: flex;
