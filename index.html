@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Mr. Shareman - show me your screen</title>
+	<link rel="stylesheet" href="./style.css">
+	<link rel="manifest" href="./manifest.json">
+</head>
+<body>
+<div class="glares"></div>
+<div class="app">
+	<h1 class="app__title" data-title="══╣ Mr. Shareman ╠══">
+		<span class="app__title-text">
+		══╣ Mr. Shareman ╠══
+		</span>
+	</h1>
+	<h2 class="app__subtitle" data-title="▾ show me your screen ▾">
+		<span class="app__subtitle-text">
+		▾ show me your screen ▾
+		</span>
+	</h2>
+	<div id="form" class="app__form">
+		<label for="text" class="app__label">Write what you wanna share</label>
+		<textarea class="app__textarea" name="" id="text" maxlength="100"></textarea>
+		<div class="app__buttons">
+			<button class="app__button js-button-clear">Clear [X]</button>
+			<button class="app__button js-button-screen">> Show me!</button>
+		</div>
+	</div>
+	<div class="app__desc">
+		<p>
+			Have you ever needed to quickly share your email, phone number, address or just your name?
+		</p>
+		<p>
+			Well, there must be an app for that, right?<br>So here it is :)
+		</p>
+		<p>
+			/ Also works offline right from your homescreen as a Progressive Web Application (PWA) /
+		</p>
+	</div>
+</div>
+<footer class="footer">
+	<p>
+		⇾ ~ made with ♥ for coding by Michal Svatos
+		<br>
+		<a href="#" target="_blank" rel="noopener">Source code</a> | Icons by <a href="https://github.com/iconoir-icons/iconoir" target="_blank" rel="noopener">iconoir</a>
+	</p>
+</footer>
+<div class="modal js-modal">
+	<a href="#" class="modal__button modal__button--close js-modal-close">
+		<svg width="24" height="24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor">
+			<path d="M6.758 17.243 12.001 12m5.243-5.243L12 12m0 0L6.758 6.757M12.001 12l5.243 5.243" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+		</svg>
+	</a>
+	<a href="#" class="modal__button modal__button--fullscreen js-modal-fullscreen">
+		<span class="modal__button-icon modal__button-icon--on">
+			<svg width="24" height="24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor"><path d="m20 20-5-5m0 0v4m0-4h4M4 20l5-5m0 0v4m0-4H5M20 4l-5 5m0 0V5m0 4h4M4 4l5 5m0 0V5m0 4H5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" /></svg>
+			</svg>
+		</span>
+		<span class="modal__button-icon modal__button-icon--off">
+			<svg width="24" height="24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor">
+			<path d="M9 9 4 4m0 0v4m0-4h4m7 5 5-5m0 0v4m0-4h-4M9 15l-5 5m0 0v-4m0 4h4m7-5 5 5m0 0v-4m0 4h-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+		</span>
+	</a>
+	<a href="#" class="modal__button modal__button--lights js-modal-lights">
+		<span class="modal__button-icon modal__button-icon--on">
+			<svg width="24" height="24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor"><path d="M9 18h6m-5 3h4m-5-6c.001-2-.499-2.5-1.5-3.5-1-1-1.476-2.013-1.5-3.5-.047-3.05 2-5 6-5 4.001 0 6.049 1.95 6 5-.023 1.487-.5 2.5-1.5 3.5-.999 1-1.499 1.5-1.5 3.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" /></svg>
+		</span>
+		<span class="modal__button-icon modal__button-icon--off">
+			<svg width="24" height="24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor"><path d="m21 2-1 1M3 2l1 1m17 13-1-1M3 16l1-1m5 3h6m-5 3h4M12 3C8 3 5.952 4.95 6 8c.023 1.487.5 2.5 1.5 3.5S9 13 9 15h6c0-2 .5-2.5 1.5-3.5h0c1-1 1.477-2.013 1.5-3.5.048-3.05-2-5-6-5z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" /></svg>
+		</span>
+	</a>
+	<div class="modal__body js-modal-body">
+		<!-- filled by JS -->
+	</div>
+</div>
+</body>
+<script src="./script.js"></script>
+<script>
+	window.addEventListener('load', () => {
+		registerSW();
+	});
+
+	// Register the Service Worker
+	async function registerSW() {
+		if ('serviceWorker' in navigator) {
+			try {
+				await navigator
+				.serviceWorker
+				.register('serviceworker.js');
+
+			} catch (e) {
+				console.log('SW registration failed');
+
+			}
+		}
+	}
+</script>
+
+</html>

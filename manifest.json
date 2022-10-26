@@ -1,0 +1,22 @@
+{
+	"name": "Mr. Shareman - show me your screen",
+	"short_name": "Mr. Shareman",
+	"start_url": "index.html",
+	"display": "standalone",
+	"background_color": "#5900b3",
+	"theme_color": "black",
+	"scope": ".",
+	"description": "Simple app for quickly sharing something on the screen.",
+	"icons": [
+		{
+			"src": "./icon-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "./icon-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	]
+}
