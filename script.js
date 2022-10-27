@@ -63,6 +63,10 @@ const clearTextarea = (textarea) => {
 	textarea.value = ""
 }
 
+const onLoadFocus = (textarea) => {
+	textarea.focus()
+}
+
 if (form) {
 	const textarea = document.getElementById('text')
 	const btnClear = document.querySelector('.js-button-clear')
@@ -78,5 +82,6 @@ if (form) {
 		clearTextarea(textarea)
 	})
 
+	onLoadFocus(textarea)
 	modalHandler()
 }

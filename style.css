@@ -147,6 +147,19 @@ body::after {
 	}
 }
 
+.app__form {
+	position: relative;
+}
+
+.app__form::after {
+	content: 'max ' attr(data-length) ' chars';
+	position: absolute;
+	right: 0;
+	top: calc(var(--gap) / 2);
+	color: rgb(var(--color-primary));
+	font-size: .6rem;
+}
+
 /* APP TITLE AND SUBTITLE
    ========================================================== */
 .app__title {
@@ -212,6 +225,7 @@ body::after {
 .app__textarea {
 	background-color: transparent;
 	width: 100%;
+	min-height: calc(var(--gap) * 3);
 	border: 2px dashed rgba(var(--color-primary) / 25%);
 	margin-top: var(--gap);
 	resize: none;
