@@ -1,5 +1,4 @@
 :root {
-	--white-alpha: rgb(255 255 255 / 0%);
 	--color-primary: 50 205 50; 		/* limegreen */
 	--color-secondary: 13 38 19;		/* dark green */
 	--color-tertiary: 2 12 5; 			/* almost black green */
@@ -260,8 +259,8 @@ body::after {
 
 .app__button:hover {
 	border-color: rgb(var(--color-primary));
-	color: rgb(var(--color-supplement-01));
 	text-shadow: 0 0 7px rgb(var(--color-primary));
+	color: #ffffff;
 }
 
 /* APP DESCRIPTION
