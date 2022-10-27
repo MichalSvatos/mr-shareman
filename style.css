@@ -278,7 +278,7 @@ body::after {
 .modal {
 	display: none;
 	padding: calc(var(--gap) / 2) calc(var(--gap) / 2);
-	position: absolute;
+	position: fixed;
 	inset: 0;
 	background-color: rgb(var(--color-tertiary));
 	color: rgb(var(--color-primary));
