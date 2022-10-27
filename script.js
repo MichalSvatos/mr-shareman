@@ -4,7 +4,8 @@ const modalWindow = document.querySelector('.js-modal')
 // TODO:
 // - [ ] disabled state for buttons
 // - [ ] exit fullscreen on esc
-// - [ ] test fullscreen on different devices
+// - [x] test fullscreen on different devices
+// - [ ] fix for iOS fullscreen
 
 // MODAL ------------------------------------------------------
 const modalHandler = () => {
