@@ -15,13 +15,16 @@
 	/* -- misc */
 	--timing: 350ms;
 	--easing: ease-in-out;
-	/*--aa: rgb(18, 94, 18);*/
 }
 
 *,
 *:before,
 *:after {
 	box-sizing: border-box;
+}
+
+html {
+	background-color: rgb(var(--color-tertiary));
 }
 
 h1,
@@ -228,7 +231,7 @@ body::after {
 	min-height: calc(var(--gap) * 3);
 	border: 2px dashed rgba(var(--color-primary) / 25%);
 	margin-top: var(--gap);
-	resize: none;
+	resize: vertical;
 	color: rgb(var(--color-primary));
 	padding: calc(var(--gap) / 2) calc(var(--gap) / 2);
 	transition: box-shadow var(--timing) var(--easing);
@@ -291,7 +294,7 @@ body::after {
    ========================================================== */
 .modal {
 	display: none;
-	padding: calc(var(--gap) / 2) calc(var(--gap) / 2);
+	padding: var(--gap) var(--gap);
 	position: fixed;
 	inset: 0;
 	background-color: rgb(var(--color-tertiary));
@@ -300,6 +303,12 @@ body::after {
 	justify-content: center;
 	align-items: center;
 	font-size: 2rem;
+}
+
+@media (min-width: 993px) {
+	.modal {
+		padding: calc(var(--gap) * 2.25) calc(var(--gap) * 2.25);
+	}
 }
 
 .modal.is-visible {

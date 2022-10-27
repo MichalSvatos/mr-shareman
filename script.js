@@ -41,6 +41,37 @@ const lightSwitch = (modalWindow) => {
 	})
 }
 
+const toggleFullScreen = () => {
+	// Thanks https://web.dev/native-hardware-fullscreen/
+	const doc = window.document;
+	const docEl = doc.documentElement;
+
+	const requestFullScreen =
+		docEl.requestFullscreen ||
+		docEl.mozRequestFullScreen ||
+		docEl.webkitRequestFullScreen ||
+		docEl.msRequestFullscreen;
+
+	const cancelFullScreen =
+		doc.exitFullscreen ||
+		doc.mozCancelFullScreen ||
+		doc.webkitExitFullscreen ||
+		doc.msExitFullscreen;
+
+	if (
+		!doc.fullscreenElement &&
+		!doc.mozFullScreenElement &&
+		!doc.webkitFullscreenElement &&
+		!doc.msFullscreenElement
+	) {
+		requestFullScreen.call(docEl);
+
+	} else {
+		cancelFullScreen.call(doc);
+
+	}
+}
+
 const fullscreen = (modalWindow) => {
 	const fullscreenButton = document.querySelector('.js-modal-fullscreen')
 
@@ -48,13 +79,7 @@ const fullscreen = (modalWindow) => {
 		e.preventDefault()
 		fullscreenButton.classList.toggle('is-active')
 
-		if (document.fullscreenElement) {
-			document.exitFullscreen();
-
-		} else {
-			modalWindow.requestFullscreen();
-
-		}
+		toggleFullScreen()
 	})
 }
 
