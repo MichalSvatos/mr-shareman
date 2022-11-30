@@ -1,11 +1,8 @@
 # Mr. Shareman
-Simple app for quickly sharing some text on the screen.
 ***
-Have you ever needed to quickly share your email, phone number, address or just your name on the screen of your device?
+Have you ever been in the situation in which you need to give someone your contact information, but struggling to do so because you left home you business card? There must be an app for that, right?
 
-There must be an app for that, right?
-
-**Well, it is now :)**
+**Well, it is now :)** I coded and designed Mr. Shareman. Simple PWA to help you to quickly share/show text on the screen of your device.
 
 [michalsvatos.github.io/mr-shareman](https://michalsvatos.github.io/mr-shareman)
 
