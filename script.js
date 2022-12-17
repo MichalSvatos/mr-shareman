@@ -3,7 +3,7 @@ const modalWindow = document.querySelector('.js-modal')
 
 // TODO:
 // - [ ] disabled state for buttons
-// - [ ] exit fullscreen on esc
+// - [x] exit fullscreen on esc
 // - [x] test fullscreen on different devices
 // - [ ] fix for iOS fullscreen
 
@@ -29,6 +29,12 @@ const closeModal = (modalWindow) => {
 	btnCloseModal.addEventListener('click', (e) => {
 		e.preventDefault()
 		modalWindow.classList.remove('is-visible')
+	})
+
+	document.addEventListener("keydown", (event) => {
+		if (event.key === 'Escape') {
+			modalWindow.classList.remove('is-visible')
+		}
 	})
 }
 

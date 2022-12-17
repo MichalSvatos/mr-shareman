@@ -12,6 +12,9 @@ Have you ever been in the situation in which you need to give someone your conta
 - [ ] Modal - option to change font size (+/-)
 
 ## Changelog
+#### v1.0.2
+- Added functionality to close modal on ESC
+
 #### v1.0.1
 - First version with basic functionality
 - Some bugfixes and tweaks included
