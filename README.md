@@ -9,9 +9,13 @@ Have you ever been in the situation in which you need to give someone your conta
 [![bIOYu4.md.png](https://iili.io/bIOYu4.md.png)](https://michalsvatos.github.io/mr-shareman)
 
 ## (I'd like) TODO
-- [ ] Modal - option to change font size (+/-)
+- [x] Modal - option to change font size (+/-)
 
 ## Changelog
+#### v1.1.0
+- Added font resize
+- Changed scrollbar color
+
 #### v1.0.2
 - Added functionality to close modal on ESC
 

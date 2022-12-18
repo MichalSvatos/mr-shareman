@@ -1,5 +1,6 @@
 const form = document.getElementById('form')
 const modalWindow = document.querySelector('.js-modal')
+const modalBody = document.querySelector('.js-modal-body')
 
 // TODO:
 // - [ ] disabled state for buttons
@@ -14,6 +15,7 @@ const modalHandler = () => {
 	closeModal(modalWindow)
 	lightSwitch(modalWindow)
 	fullscreen(modalWindow)
+	resize(modalBody)
 }
 
 const openModal = (modalWindow, value) => {
@@ -87,6 +89,34 @@ const fullscreen = (modalWindow) => {
 		fullscreenButton.classList.toggle('is-active')
 
 		toggleFullScreen()
+	})
+}
+
+const resize = (modalBody) => {
+	const plus = document.querySelector(".js-modal-plus")
+	const minus = document.querySelector(".js-modal-minus")
+
+	// -- TODO: DRY ...
+	plus.addEventListener("click", (e) => {
+		e.preventDefault()
+
+		let fontSize = Number(modalBody.dataset.fontSize)
+
+		if (fontSize >= 150) return
+		fontSize = fontSize + 10
+		modalBody.dataset.fontSize = fontSize
+		modalBody.setAttribute("style", `font-size: ${fontSize}%`)
+	})
+
+	minus.addEventListener("click", (e) => {
+		e.preventDefault()
+
+		let fontSize = Number(modalBody.dataset.fontSize)
+
+		if (fontSize <= 50) return
+		fontSize = fontSize - 10
+		modalBody.dataset.fontSize = fontSize
+		modalBody.setAttribute("style", `font-size: ${fontSize}%`)
 	})
 }
 

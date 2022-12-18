@@ -69,6 +69,25 @@ body {
 	background-image: radial-gradient(circle, #0d2613, #0d2513, #0c2313, #0c2212, #0c2112, #0c1f11, #0c1d10, #0b1b0f, #09180d, #08150b, #061109, #050d07);
 	font-family: var(--font-primary);
 	color: rgb(var(--color-primary));
+
+	/* Standard version (Firefox only for now) */
+	scrollbar-color: rgb(var(--color-secondary)) rgb(var(--color-tertiary));
+}
+
+/* Thanks https://css-tricks.com/the-current-state-of-styling-scrollbars-in-css/ */
+/* For Chrome & Safari */
+body::-webkit-scrollbar {
+	width: calc(var(--gap) / 2);
+	height: calc(var(--gap) / 2);
+}
+
+body::-webkit-scrollbar-thumb {
+	background: rgb(var(--color-secondary));
+	border-radius: 5px;
+}
+
+body::-webkit-scrollbar-track {
+	background: rgb(var(--color-tertiary));
 }
 
 /* -- lines */
@@ -117,6 +136,7 @@ body::after {
 	opacity: .15;
 	pointer-events: none;
 }
+
 .glares::before {
 	width: calc((100%) - 10vw);
 	height: 25vh;
@@ -332,7 +352,9 @@ body::after {
 .modal__body {
 	word-break: break-word;
 	font-weight: 600;
+	max-height: calc(100vh - (var(--gap) * 6));
 	letter-spacing: .05rem;
+	overflow: hidden;
 }
 
 /* -- modal buttons */
@@ -401,6 +423,16 @@ body::after {
 .modal__button--lights {
 	left: calc(var(--gap) / 2);
 	bottom: calc(var(--gap) / 2);
+}
+
+.modal__button--plus,
+.modal__button--minus {
+	right: calc(var(--gap) / 2);
+	bottom: calc(var(--gap) / 2);
+}
+
+.modal__button--minus {
+	right: calc(var(--gap) * 3);
 }
 
 /* FOOTER
