@@ -43,8 +43,7 @@ const closeModal = (modalWindow) => {
 const lightSwitch = (modalWindow) => {
 	const lightSwitchButton = document.querySelector('.js-modal-lights')
 
-	lightSwitchButton.addEventListener('click', (e) => {
-		e.preventDefault()
+	lightSwitchButton.addEventListener('click', () => {
 		lightSwitchButton.classList.toggle('is-active')
 		modalWindow.classList.toggle('lights-on')
 	})
@@ -84,8 +83,7 @@ const toggleFullScreen = () => {
 const fullscreen = (modalWindow) => {
 	const fullscreenButton = document.querySelector('.js-modal-fullscreen')
 
-	fullscreenButton.addEventListener('click', (e) => {
-		e.preventDefault()
+	fullscreenButton.addEventListener('click', () => {
 		fullscreenButton.classList.toggle('is-active')
 
 		toggleFullScreen()
@@ -97,9 +95,7 @@ const resize = (modalBody) => {
 	const minus = document.querySelector(".js-modal-minus")
 
 	// -- TODO: DRY ...
-	plus.addEventListener("click", (e) => {
-		e.preventDefault()
-
+	plus.addEventListener("click", () => {
 		let fontSize = Number(modalBody.dataset.fontSize)
 
 		if (fontSize >= 150) return
@@ -108,9 +104,7 @@ const resize = (modalBody) => {
 		modalBody.setAttribute("style", `font-size: ${fontSize}%`)
 	})
 
-	minus.addEventListener("click", (e) => {
-		e.preventDefault()
-
+	minus.addEventListener("click", () => {
 		let fontSize = Number(modalBody.dataset.fontSize)
 
 		if (fontSize <= 50) return

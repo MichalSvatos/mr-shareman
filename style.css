@@ -23,6 +23,11 @@
 	box-sizing: border-box;
 }
 
+*:focus-visible {
+	outline-color: rgb(var(--color-supplement-01));
+	color: rgb(var(--color-supplement-01)) !important;
+}
+
 html {
 	background-color: rgb(var(--color-tertiary));
 }
@@ -371,6 +376,7 @@ body::after {
 	transition: background-color var(--timing) var(--easing),
 	color var(--timing) var(--easing);
 	border: 2px dashed rgb(var(--color-primary) / 50%);
+	cursor: pointer;
 }
 
 .modal__button:hover {

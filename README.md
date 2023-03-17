@@ -12,6 +12,9 @@ Have you ever been in the situation in which you need to give someone your conta
 - [x] Modal - option to change font size (+/-)
 
 ## Changelog
+#### v1.1.1
+- FIX - `a` --> `button`, focus state
+
 #### v1.1.0
 - Added font resize
 - Changed scrollbar color
