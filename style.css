@@ -451,6 +451,7 @@ body::after {
 [id="qr-code-container"]:not(:empty) {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	padding: var(--gap) var(--gap);
 	background-color: rgb(var(--color-tertiary));
 	position: fixed;
@@ -460,6 +461,7 @@ body::after {
 
 [id="qr-code-container"] img {
 	border: var(--gap) solid #fff;
+	max-width: 100%;
 }
 
 .lights-on [id="qr-code-container"]:not(:empty) {
