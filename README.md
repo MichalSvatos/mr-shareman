@@ -9,6 +9,9 @@ Have you ever been in the situation in which you need to give someone your conta
 [![bIOYu4.md.png](https://iili.io/bIOYu4.md.png)](https://michalsvatos.github.io/mr-shareman)
 
 ## Changelog
+#### v1.2.2
+- FIX - iOS because Safari is apparently the new IE
+
 #### v1.2.1
 - FIX - QR code image size tweak
 

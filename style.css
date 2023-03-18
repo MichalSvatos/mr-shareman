@@ -155,7 +155,6 @@ body::after {
 	filter: blur(50px);
 }
 
-
 /* MAIN APP WINDOW
    ========================================================== */
 .app {
@@ -277,6 +276,7 @@ body::after {
 
 .app__button {
 	-webkit-appearance: none;
+	appearance: none;
 	background-color: transparent;
 	padding: calc(var(--gap) / 3) calc(var(--gap) / 2);
 	text-transform: uppercase;
@@ -291,6 +291,7 @@ body::after {
 		color var(--timing) var(--easing);
 	width: calc(var(--gap) * 5);
 	text-align: left;
+	transform: translate3d(0, 0, 0); /* iOS Safari fix ... */
 }
 
 .app__button + .app__button {
@@ -377,6 +378,9 @@ body::after {
 	color var(--timing) var(--easing);
 	border: 2px dashed rgb(var(--color-primary) / 50%);
 	cursor: pointer;
+	-webkit-appearance: none;
+	appearance: none;
+	transform: translate3d(0, 0, 0); /* iOS Safari fix ... */
 }
 
 .modal__button:hover {
@@ -393,10 +397,15 @@ body::after {
 	background-size: 3px 3px;
 	opacity: .2;
 	pointer-events: none;
+	transform: translate3d(0, 0, 0); /* iOS Safari fix ... */
 }
 
 .modal__button::after {
 	display: none;
+}
+
+.modal__button svg {
+	transform: translate3d(0, 0, 0); /* iOS Safari fix ... */
 }
 
 /* -- button variants */
@@ -457,9 +466,11 @@ body::after {
 	position: fixed;
 	inset: calc(var(--gap) * 3) calc(var(--gap) / 2);
 	z-index: 35;
+	transform: translate3d(0, 0, 0); /* iOS Safari fix ... */
 }
 
-[id="qr-code-container"] img {
+[id="qr-code-container"] img,
+[id="qr-code-container"] canvas {
 	border: var(--gap) solid #fff;
 	max-width: 100%;
 }
