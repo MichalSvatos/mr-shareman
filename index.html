@@ -13,9 +13,9 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png?v=1.1.1">
 	<link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png?v=1.1.1">
 	<link rel="manifest" href="./images/site.webmanifest?v=1.1.1">
-	<link rel="mask-icon" href="./images/safari-pinned-tab.svg?v=1.1.1" color="#0d2613">
+	<link rel="mask-icon" href="./images/safari-pinned-tab.svg?v=1.1.1" color="#08180b">
 	<meta name="msapplication-TileColor" content="#00a300">
-	<meta name="theme-color" content="#0d2613">
+	<meta name="theme-color" content="#08180b">
 
 	<!-- #CSS -->
 	<link rel="stylesheet" href="./style.css?v=1.1.1">
@@ -74,12 +74,20 @@
 			</svg>
 		</span>
 	</button>
-	<button class="modal__button modal__button--lights js-modal-lights">
+	<button class="modal__button modal__button--lights js-modal-button-switch js-modal-lights">
 		<span class="modal__button-icon modal__button-icon--on">
 			<svg width="24" height="24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor"><path d="M9 18h6m-5 3h4m-5-6c.001-2-.499-2.5-1.5-3.5-1-1-1.476-2.013-1.5-3.5-.047-3.05 2-5 6-5 4.001 0 6.049 1.95 6 5-.023 1.487-.5 2.5-1.5 3.5-.999 1-1.499 1.5-1.5 3.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" /></svg>
 		</span>
 		<span class="modal__button-icon modal__button-icon--off">
 			<svg width="24" height="24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor"><path d="m21 2-1 1M3 2l1 1m17 13-1-1M3 16l1-1m5 3h6m-5 3h4M12 3C8 3 5.952 4.95 6 8c.023 1.487.5 2.5 1.5 3.5S9 13 9 15h6c0-2 .5-2.5 1.5-3.5h0c1-1 1.477-2.013 1.5-3.5.048-3.05-2-5-6-5z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" /></svg>
+		</span>
+	</button>
+	<button class="modal__button modal__button--qr js-modal-button-switch js-modal-qr">
+		<span class="modal__button-icon modal__button-icon--on">
+			<svg xmlns="http://www.w3.org/2000/svg" fill="none" width="24" height="24" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12v3M12 3v3m6 6v3m-6 3h9m-3 3h3M6 12h3M6 6.01 6.01 6M12 12.01l.01-.01M3 12.01l.01-.01M12 9.01l.01-.01M12 15.01l.01-.01M15 21.01l.01-.01m-3.01.01.01-.01M21 12.01l.01-.01M21 15.01l.01-.01M18 6.01l.01-.01M6 18.01l.01-.01M9 3.6v4.8a.6.6 0 0 1-.6.6H3.6a.6.6 0 0 1-.6-.6V3.6a.6.6 0 0 1 .6-.6h4.8a.6.6 0 0 1 .6.6Zm12 0v4.8a.6.6 0 0 1-.6.6h-4.8a.6.6 0 0 1-.6-.6V3.6a.6.6 0 0 1 .6-.6h4.8a.6.6 0 0 1 .6.6Zm-12 12v4.8a.6.6 0 0 1-.6.6H3.6a.6.6 0 0 1-.6-.6v-4.8a.6.6 0 0 1 .6-.6h4.8a.6.6 0 0 1 .6.6ZM22.03 1.97 1.97 22.03"/></svg>
+		</span>
+		<span class="modal__button-icon modal__button-icon--off">
+			<svg xmlns="http://www.w3.org/2000/svg" fill="none" width="24" height="24" stroke-width="1.5" color="currentColor" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M15 12v3M12 3v3m6 6v3m-6 3h9m-3 3h3M6 12h3M6 6.01 6.01 6M12 12.01l.01-.01M3 12.01l.01-.01M12 9.01l.01-.01M12 15.01l.01-.01M15 21.01l.01-.01m-3.01.01.01-.01M21 12.01l.01-.01M21 15.01l.01-.01M18 6.01l.01-.01M9 3.6v4.8a.6.6 0 0 1-.6.6H3.6a.6.6 0 0 1-.6-.6V3.6a.6.6 0 0 1 .6-.6h4.8a.6.6 0 0 1 .6.6zm12 0v4.8a.6.6 0 0 1-.6.6h-4.8a.6.6 0 0 1-.6-.6V3.6a.6.6 0 0 1 .6-.6h4.8a.6.6 0 0 1 .6.6zM6 18.01l.01-.01M9 15.6v4.8a.6.6 0 0 1-.6.6H3.6a.6.6 0 0 1-.6-.6v-4.8a.6.6 0 0 1 .6-.6h4.8a.6.6 0 0 1 .6.6z"/></svg>
 		</span>
 	</button>
 	<button class="modal__button modal__button--plus js-modal-plus">
@@ -91,6 +99,7 @@
 	<div class="modal__body js-modal-body" data-font-size="100">
 		<!-- filled by JS -->
 	</div>
+	<div id="qr-code-container"></div>
 </div>
 <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
 <script src="./script.js?v=1.1.1"></script>

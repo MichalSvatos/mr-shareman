@@ -426,9 +426,14 @@ body::after {
 	top: calc(var(--gap) / 2);
 }
 
-.modal__button--lights {
+.modal__button--lights,
+.modal__button--qr {
 	left: calc(var(--gap) / 2);
 	bottom: calc(var(--gap) / 2);
+}
+
+.modal__button--qr {
+	left: calc(var(--gap) * 3);
 }
 
 .modal__button--plus,
@@ -439,6 +444,26 @@ body::after {
 
 .modal__button--minus {
 	right: calc(var(--gap) * 3);
+}
+
+/* QR CODE
+   ========================================================== */
+[id="qr-code-container"]:not(:empty) {
+	display: flex;
+	justify-content: center;
+	padding: var(--gap) var(--gap);
+	background-color: rgb(var(--color-tertiary));
+	position: fixed;
+	inset: calc(var(--gap) * 3) calc(var(--gap) / 2);
+	z-index: 35;
+}
+
+[id="qr-code-container"] img {
+	border: var(--gap) solid #fff;
+}
+
+.lights-on [id="qr-code-container"]:not(:empty) {
+	background-color: #fff;
 }
 
 /* FOOTER
@@ -462,7 +487,7 @@ body::after {
 }
 
 .footer:hover,
-.footer:hover a{
+.footer:hover a {
 	color: rgb(var(--color-supplement-01));
 }
 

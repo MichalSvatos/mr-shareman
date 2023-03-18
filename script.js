@@ -1,6 +1,8 @@
 const form = document.getElementById('form')
 const modalWindow = document.querySelector('.js-modal')
 const modalBody = document.querySelector('.js-modal-body')
+const qrCodeContainer = document.getElementById('qr-code-container')
+const qrCodeButton = document.querySelector('.js-modal-qr')
 
 // TODO:
 // - [ ] disabled state for buttons
@@ -13,8 +15,8 @@ const modalHandler = () => {
 	if (!modalWindow) return
 
 	closeModal(modalWindow)
-	lightSwitch(modalWindow)
-	fullscreen(modalWindow)
+	buttonSwitch(modalWindow)
+	fullscreen()
 	resize(modalBody)
 }
 
@@ -33,19 +35,38 @@ const closeModal = (modalWindow) => {
 		modalWindow.classList.remove('is-visible')
 	})
 
-	document.addEventListener("keydown", (event) => {
+	document.addEventListener('keydown', (event) => {
 		if (event.key === 'Escape') {
 			modalWindow.classList.remove('is-visible')
+			qrCodeContainer.innerHTML = ""
+			qrCodeButton.classList.remove("is-active")
 		}
 	})
 }
 
-const lightSwitch = (modalWindow) => {
-	const lightSwitchButton = document.querySelector('.js-modal-lights')
+const buttonSwitch = (modalWindow) => {
+	const switchButton = document.querySelectorAll('.js-modal-button-switch')
 
-	lightSwitchButton.addEventListener('click', () => {
-		lightSwitchButton.classList.toggle('is-active')
-		modalWindow.classList.toggle('lights-on')
+	switchButton.forEach(button => {
+		button?.addEventListener('click', (e) => {
+			button.classList.toggle('is-active')
+
+			if (e.currentTarget.classList.contains("js-modal-qr")) {
+				if (!qrCodeContainer) return
+
+				if (qrCodeContainer.innerHTML === "") {
+					new QRCode(qrCodeContainer, e.currentTarget.dataset.value)
+
+				} else {
+					qrCodeContainer.innerHTML = ""
+
+				}
+			}
+
+			if (e.currentTarget.classList.contains("js-modal-lights")) {
+				modalWindow.classList.toggle('lights-on')
+			}
+		})
 	})
 }
 
@@ -80,7 +101,7 @@ const toggleFullScreen = () => {
 	}
 }
 
-const fullscreen = (modalWindow) => {
+const fullscreen = () => {
 	const fullscreenButton = document.querySelector('.js-modal-fullscreen')
 
 	fullscreenButton.addEventListener('click', () => {
@@ -131,6 +152,7 @@ if (form) {
 	btnScreen.addEventListener('click', () => {
 		if (!textarea.value) return
 
+		qrCodeButton.setAttribute("data-value", textarea.value)
 		openModal(modalWindow, textarea.value)
 	})
 
