@@ -23,8 +23,11 @@ const modalHandler = () => {
 const openModal = (modalWindow, value) => {
 	const modalBody = modalWindow.querySelector('.js-modal-body')
 
-	modalBody.innerHTML = value
+	modalBody.textContent = value
 	modalWindow.classList.add('is-visible')
+
+	return modalBody.innerHTML
+
 }
 
 const closeModal = (modalWindow) => {
