@@ -9,9 +9,12 @@ Have you ever been in the situation in which you need to give someone your conta
 [![bIOYu4.md.png](https://iili.io/bIOYu4.md.png)](https://michalsvatos.github.io/mr-shareman)
 
 ## Changelog
+### v1.3.2
+- FIX - Service Worker fail
+
 ### v1.3.1
 - FIX - manifest confusion resolved
-- 
+
 ### v1.3.0
 - User input sanitation (I cannot believe that I didn't implement that! 🤦)
 
