@@ -7,7 +7,7 @@
 	--stripes: linear-gradient(to bottom, rgb(0 0 0) 0%, rgb(0 0 0) 50%, rgb(0 0 0) 50%, rgb(255 255 255 / 0%) 50%, rgb(255 255 255 / 0%) 100%);
 
 	/* -- typography */
-	--font-primary: "Courier New", serif;
+	--font-primary: "Courier New", Courier, monospace;
 
 	/* -- spacing */
 	--gap: 1.6rem;
@@ -179,7 +179,7 @@ body::after {
 }
 
 .app__form::after {
-	content: 'max ' attr(data-length) ' chars';
+	content: 'optimal around ' attr(data-length) ' chars';
 	position: absolute;
 	right: 0;
 	top: calc(var(--gap) / 2);
@@ -266,6 +266,19 @@ body::after {
 	background-color: rgba(var(--color-secondary) / 5%);
 	outline: 3px solid rgba(var(--color-primary) / 30%);
 	box-shadow: 0 0 20px -4px rgb(var(--color-primary));
+}
+
+.app__message {
+	display: none;
+	background-color: rgb(var(--color-primary));
+	color: rgb(var(--color-tertiary));
+	font-size: .75rem;
+	padding: calc(var(--gap) * .25);
+	margin-top: 0;
+}
+
+.app__message[data-visiblity="visible"] {
+	display: block;
 }
 
 .app__buttons {
@@ -445,13 +458,12 @@ body::after {
 	left: calc(var(--gap) * 3);
 }
 
-.modal__button--plus,
-.modal__button--minus {
+.modal__button--font-size {
 	right: calc(var(--gap) / 2);
 	bottom: calc(var(--gap) / 2);
 }
 
-.modal__button--minus {
+.modal__button--font-size + .modal__button--font-size {
 	right: calc(var(--gap) * 3);
 }
 

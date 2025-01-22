@@ -9,6 +9,13 @@ Have you ever been in the situation in which you need to give someone your conta
 [![bIOYu4.md.png](https://iili.io/bIOYu4.md.png)](https://michalsvatos.github.io/mr-shareman)
 
 ## Changelog
+### v1.4.0
+- FIX - `manifest.json` (colors, orientation, id, 512x512 icon) (thx [@madcampos](https://github.com/madcampos) for the tips)
+- NEW - 140-character limit removed; a notification is shown when exceeded; font size set to 80%
+- NEW - description
+- NEW - app screenshots
+- NEW - version number in the footer
+
 ### v1.3.2
 - FIX - Service Worker fail
 

@@ -1,4 +1,5 @@
 const form = document.getElementById('form')
+const message = document.querySelector('.app__message')
 const modalWindow = document.querySelector('.js-modal')
 const modalBody = document.querySelector('.js-modal-body')
 const qrCodeContainer = document.getElementById('qr-code-container')
@@ -17,7 +18,7 @@ const modalHandler = () => {
 	closeModal(modalWindow)
 	buttonSwitch(modalWindow)
 	fullscreen()
-	resize(modalBody)
+	fontSizeChanger(modalBody)
 }
 
 const openModal = (modalWindow, value) => {
@@ -114,27 +115,29 @@ const fullscreen = () => {
 	})
 }
 
-const resize = (modalBody) => {
-	const plus = document.querySelector(".js-modal-plus")
-	const minus = document.querySelector(".js-modal-minus")
+const fontSizeChanger = (modalBody) => {
+	const fontSizeButtons = document.querySelectorAll('.js-modal-font-size')
+	const fontSizeIncrement = 10
+	const fontSizeMax = 150
+	const fontSizeMin = 50
 
-	// -- TODO: DRY ...
-	plus.addEventListener("click", () => {
-		let fontSize = Number(modalBody.dataset.fontSize)
+	fontSizeButtons.forEach((button) => {
+		button.addEventListener('click', () => {
+			let fontSize = Number(modalBody.dataset.fontSize)
 
-		if (fontSize >= 150) return
-		fontSize = fontSize + 10
-		modalBody.dataset.fontSize = fontSize
-		modalBody.setAttribute("style", `font-size: ${fontSize}%`)
-	})
+			if (button.dataset.fontSizeAction === 'increase') {
+				if (fontSize >= fontSizeMax) return
+				fontSize += fontSizeIncrement
+			}
 
-	minus.addEventListener("click", () => {
-		let fontSize = Number(modalBody.dataset.fontSize)
+			if (button.dataset.fontSizeAction === 'decrease') {
+				if (fontSize <= fontSizeMin) return
+				fontSize -= fontSizeIncrement
+			}
 
-		if (fontSize <= 50) return
-		fontSize = fontSize - 10
-		modalBody.dataset.fontSize = fontSize
-		modalBody.setAttribute("style", `font-size: ${fontSize}%`)
+			modalBody.dataset.fontSize = fontSize.toString()
+			modalBody.setAttribute("style", `font-size: ${fontSize}%`)
+		})
 	})
 }
 
@@ -151,6 +154,17 @@ if (form) {
 	const textarea = document.getElementById('text')
 	const btnClear = document.querySelector('.js-button-clear')
 	const btnScreen = document.querySelector('.js-button-screen')
+
+	textarea.addEventListener('input', () => {
+		if (textarea.value.length > 140) {
+			modalBody.setAttribute("style", `font-size: 80%`)
+			message.dataset.visiblity = 'visible'
+
+		} else {
+			message.dataset.visiblity = 'hidden'
+
+		}
+	})
 
 	btnScreen.addEventListener('click', () => {
 		if (!textarea.value) return

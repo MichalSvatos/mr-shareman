@@ -3,10 +3,10 @@
 	"short_name": "Mr. Shareman",
 	"start_url": "index.html",
 	"display": "standalone",
-	"background_color": "#0d2613",
-	"theme_color": "black",
+	"background_color": "#08180b",
+	"theme_color": "#000000",
 	"scope": ".",
-	"description": "Simple app for quickly sharing something on the screen.",
+	"description": "Quickly present your text in a large, readable format. Ideal for sharing email addresses and other details.",
 	"icons": [
 		{
 			"src": "./images/android-chrome-192x192.png",
@@ -17,6 +17,37 @@
 			"src": "./images/android-chrome-256x256.png",
 			"sizes": "256x256",
 			"type": "image/png"
+		},
+		{
+			"src": "./images/android-chrome-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png"
 		}
-	]
+	],
+	"screenshots": [
+		{
+			"src": "./images/screenshots/homescreen.png",
+			"sizes": "864x1826",
+			"type": "image/png",
+			"form_factor": "narrow",
+			"label": "Home screen"
+		},
+		{
+			"src": "./images/screenshots/modal.png",
+			"sizes": "864x1826",
+			"type": "image/png",
+			"form_factor": "narrow",
+			"label": "Sharing screen"
+		},
+		{
+			"src": "./images/screenshots/homescreen--desktop.png",
+			"sizes": "1280x720",
+			"type": "image/png",
+			"form_factor": "wide",
+			"label": "Home screen (desktop)"
+		}
+	],
+	"orientation": "any",
+	"id": "pwa.mrshareman",
+	"lang": "en"
 }
